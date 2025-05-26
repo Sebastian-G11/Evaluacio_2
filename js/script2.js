@@ -38,7 +38,7 @@ function validarLargoMinimo(elemento, valor, eError){
 }
 
 function validarEdad(elemento, valor, eError){
-    if(valor.number <= 17 && valor.number >= 100){
+    if(valor <= 17 && valor >= 100){
         eError.innerHTML = "Debe ingresar una edad valida"
         alert("Debe ingresar una edad valida")
         elemento.style.backgroundColor = "red"
@@ -47,7 +47,7 @@ function validarEdad(elemento, valor, eError){
     }else {
         eError.innerTEXT = ""
         elemento.style.backgroundColor = "green"
-        elemento.style.colo = "white"
+        elemento.style.color = "white"
         return "exito"
     }
 }
@@ -57,12 +57,11 @@ function cargarDatos(){
         return "<tr><td>"+p.nombre+
                 "</td><td>"+p.edad+
                 "</td><td><button type = 'button' value = '"+index+"' onclick = 'eliminar("+index+")'>Eliminar</button>"+
-                "<button oclick = 'actualizarFormulario("+index+")'>Actualizar</button></td></tr>"
+                "<button onclick = 'actualizarFormulario("+index+")'>Actualizar</button></td></tr>"
     })
     let tablaPersonas = document.getElementById("cuerpoTabla")
     let strTablaPersonas = mapPersonas.join("")
     tablaPersonas.innerHTML = strTablaPersonas
-    console.log("se ingresaron los datos")
 }
 
 function eliminar(indice){
