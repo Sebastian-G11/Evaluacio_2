@@ -38,7 +38,7 @@ function validarLargoMinimo(elemento, valor, eError){
 }
 
 function validarEdad(elemento, valor, eError){
-    if(valor <= 17 && valor >= 100){
+    if(valor < 17 && valor > 100){
         eError.innerHTML = "Debe ingresar una edad valida"
         alert("Debe ingresar una edad valida")
         elemento.style.backgroundColor = "red"
